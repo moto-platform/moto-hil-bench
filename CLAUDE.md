@@ -16,7 +16,7 @@ A vehicle-independent HIL (Hardware-in-the-Loop) test bench. Two parts:
 
 ## Two-bus simulation (D-009)
 
-The DUT sees two CAN buses: the **vehicle bus** (restbus with the `vehicles/<vehicle>/` DBC — mimicking the CL250 ECU) and the **platform bus** (`platform.dbc` — mimicking the platform nodes not under test; e.g. when testing safety-node, rt-core's EKF messages + heartbeat, including E2E). E2E fault injection (corrupted CRC, frozen counter, timeout) is a core scenario class. This is why the STM32F4's two bxCANs are used.
+The DUT sees two CAN buses: the **vehicle bus** (the simulated CL250 ECU answers UDS `0x22` polls on 29-bit `0x18DA10F1`/`0x18DAF110` from the `vehicles/<vehicle>/` definitions derived from `uds/vehicle_cl250.yaml`, incl. session/tester-present handling, NRCs such as 0x78, and bus-off faults) and the **platform bus** (`platform.dbc` — mimicking the platform nodes not under test; e.g. when testing safety-node, rt-core's EKF messages + heartbeat, including E2E). E2E fault injection (corrupted CRC, frozen counter, timeout) is a core scenario class. This is why the STM32F4's two bxCANs are used.
 
 ## Independence principle (why STM32F4, not the DUT's chip)
 
