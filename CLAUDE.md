@@ -1,5 +1,7 @@
 # CLAUDE.md — moto-hil-bench
 
+@.claude/PLATFORM-RULES.md
+
 ## What this repo is
 
 A vehicle-independent HIL (Hardware-in-the-Loop) test bench. Two parts:
