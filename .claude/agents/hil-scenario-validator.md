@@ -2,6 +2,7 @@
 name: hil-scenario-validator
 description: Call this when a new YAML scenario is added under scenarios/ in the moto-hil-bench repo, or an existing one is changed. Checks whether it matches the schema the scenario engine expects, and whether it breaks the vehicle-independence rule.
 tools: Read, Grep, Glob, Bash
+model: haiku
 ---
 
 You are the scenario quality controller for the `moto-hil-bench` project.

@@ -45,3 +45,7 @@ Reads CAN schema/VSS definitions from `moto-vehicle-defs` (submodule: `external/
 ## Context
 
 Full HIL hardware architecture: `../moto-vehicle-defs/docs/ARCHITECTURE.md` (summary) · detail: `../moto-vehicle-defs/docs/hardware-architecture.md` (section index in `docs/README.md`) section 9b. For the scenario format and test catalog, also see the vehicle work plan (`../moto-vehicle-defs/docs/vehicle-work-plan.md`, section 7).
+
+## Claude agent
+
+`hil-scenario-validator` (repo-owned, `.claude/agents/`): run it whenever a scenario under `scenarios/` is added or changed.
