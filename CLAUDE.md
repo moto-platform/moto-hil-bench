@@ -20,7 +20,7 @@ The DUT sees two CAN buses: the **vehicle bus** (the simulated CL250 ECU answers
 
 ## Independence principle (why STM32F4, not the DUT's chip)
 
-The simulator must **not be the same chip** as the device under test (DUT — `moto-rt-core`/`moto-connectivity-node`). Otherwise both share the same library/blind spot, and the test can't catch the bug. The simulator is STM32F4, the main vehicle MCU is STM32H7/ESP32-S3 — a different class, same family (keeps the vehicle chain familiar). If a suggestion comes in to change this decision, ask the user.
+The simulator must **not be the same chip** as the device under test (DUT — `moto-rt-core`/`moto-connectivity-node`). Otherwise both share the same library/blind spot, and the test can't catch the bug. The simulator is STM32F4, the main vehicle MCU is the STM32H755 (M7 rt-core, M4 safety partition, D-072)/ESP32-S3 — a different class, same family (keeps the vehicle chain familiar). The M4 has no CAN: safety-partition scenarios run with an M7 forwarder test image that copies the HIL's 0x020/0x022/0x081 frames into the mailbox; it is a separate build target that a release image never contains (D-072 item 8). If a suggestion comes in to change this decision, ask the user.
 
 ## Dependencies
 
